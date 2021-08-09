@@ -126,12 +126,11 @@ class DetailScreen extends ConsumerWidget
   void submitChatToFirebase(BuildContext context, ChatMessage chatMessage, int estimatedServerTimeInMs) {
     chatRef.once().then((DataSnapshot snapshot)
     {
-
-      if(snapshot!=null) //if user already create chat before
-        {
-          appendChat(context,chatMessage,estimatedServerTimeInMs);
-        }
-      else
+     // if(snapshot!=null) //if user already create chat before
+      //   {
+      //     appendChat(context,chatMessage,estimatedServerTimeInMs);
+      //   }
+      // else
         createChat(context,chatMessage,estimatedServerTimeInMs);
     });
   }
@@ -173,23 +172,27 @@ class DetailScreen extends ConsumerWidget
           .child(context.read(chatUser).state.uid)
       .child(user.uid)
            .set
-      //     (<String,dynamic>{
-      //   // context.read(chatUser).state.uid:chatInfo
-      //   "lastUpdate":chatInfo.lastUpdate,
-      //   "lastMessage":chatInfo.lastMessage,
-      //   "createId":chatInfo.createId,
-      //   "friendId":chatInfo.friendId,
-      //   "createName":chatInfo.createName,
-      //   "friendName":chatInfo.friendName,
-      //   "creatDate":chatInfo.createDate,
-      //
-      //
-      //
-      // })
-        (<String,ChatInfo>
-      {
-        user.uid:chatInfo
+          (<String,dynamic>{
+        // context.read(chatUser).state.uid:chatInfo
+        "lastUpdate":chatInfo.lastUpdate,
+        "lastMessage":chatInfo.lastMessage,
+        "createId":chatInfo.createId,
+        "friendId":chatInfo.friendId,
+        "createName":chatInfo.createName,
+        "friendName":chatInfo.friendName,
+        "creatDate":chatInfo.createDate,
+
+
+
       })
+
+
+
+
+      //   (<String,ChatInfo>
+      // {
+      //   user.uid:chatInfo
+      // })
           .then((value)
       {
         //After success add on chatt Refrence
