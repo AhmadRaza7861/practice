@@ -182,8 +182,6 @@ class DetailScreen extends ConsumerWidget
         "friendName":chatInfo.friendName,
         "creatDate":chatInfo.createDate,
 
-
-
       })
 
 
@@ -277,9 +275,4 @@ class DetailScreen extends ConsumerWidget
     })
     .catchError((e)=>showOnlySnackBar(context, "Cannot update user Chat List"));
   }
-
-
-
-
-
 }
