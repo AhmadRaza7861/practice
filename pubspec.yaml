@@ -39,6 +39,11 @@ dependencies:
   bubble: any
   firebase_storage: any
   intl: any
+  camera: any
+  path_provider: any
+  path: any
+  sliding_sheet: any
+  uuid: any
 
 
 
